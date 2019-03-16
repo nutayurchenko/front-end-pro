@@ -24,3 +24,4 @@ const userNumber = getNumber();
 const evenNumbers = countEvenNumbers(userNumber);
 
 alert ('Ваше число содержит ' + evenNumbers + ' чётных цифр(ы).')
+
