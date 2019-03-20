@@ -2,7 +2,7 @@ function getRandomNumb(min, max){
   return Math.floor((Math.random() * (max - min)) + min); //округлила число, для более легкого восприятия пользователем
 }
 
-function numberComparation(firstRandomNumb, secondRandomNumb){
+function compareNumbers(firstRandomNumb, secondRandomNumb){
    
     if (firstRandomNumb>secondRandomNumb){
         return firstRandomNumb;
@@ -13,7 +13,7 @@ function numberComparation(firstRandomNumb, secondRandomNumb){
   
 const firstRandomNumb = getRandomNumb(1000, 2000);
 const secondRandomNumb = getRandomNumb(1000, 2000);
-const result = numberComparation(firstRandomNumb, secondRandomNumb);
+const result = compareNumbers(firstRandomNumb, secondRandomNumb);
 
 alert ('Первое рандомное число: ' + firstRandomNumb);
 alert ('Второе рандомное число: ' + secondRandomNumb);
