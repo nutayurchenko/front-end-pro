@@ -2,7 +2,7 @@ function getNumber(){
     let result = null;
     do{
         let number = prompt ('Введите ' + 'число:');
-        if(!isNaN(parseFloat(number)) && isFinite(number)){
+        if(!isNaN(number) && isFinite(number)){
             result = number;
         } else {
             alert ('Пожалуйста, введите корректное число');
@@ -13,8 +13,10 @@ function getNumber(){
 
 function countEvenNumbers(n) {
         let count = 0;
-        n.toString().split('').map(function(n){
-            n%2 == 0 ? count++: false
+        n.toString().split('').forEach(function(n){
+            if(n%2 === 0){
+                count++;
+            }
         });
         return count;
     }
