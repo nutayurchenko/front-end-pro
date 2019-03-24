@@ -1,13 +1,13 @@
 function getName(){
-    let someName = document.getElementById("user_text");
+    let someName = null;
     do{
-        let userValue = prompt ('Введите ваше имя');
+        let userValue = prompt ('Введите ваше имя:');
         if(isNaN(userValue) && userValue != ''){
-            someName = 'Привет ' + userValue;
+            someName = 'Привет ' + userValue + '!';
         } else {
             alert ('Что-то пошло не так. Введите корректно ваше имя');
         };
-    } while (someName == document.getElementById("user_text"));       
+    } while (someName == null);       
     return someName;
 };
 
@@ -24,8 +24,14 @@ function getNumber(){
     return result;
 };
 
+function addElement(){
+    let list = document.getElementById("user_number");
+    let newLi = document.createElement('li');
+    newLi.innerHTML = userNumber;
+    list.appendChild(newLi);
+}
 
 const userName = getName();
 const userNumber = getNumber();
 document.getElementById("user_text").innerHTML = userName;
-document.getElementById("user_number").innerHTML = 'Ваше число ' + userNumber;
+document.getElementsByName(addElement());
