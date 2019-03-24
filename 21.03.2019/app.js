@@ -1,7 +1,7 @@
 function getName(){
     let someName = document.getElementById("user_text");
     do{
-        let userValue = prompt ('Введите ' + 'ваше '  + 'имя');
+        let userValue = prompt ('Введите ваше имя');
         if(isNaN(userValue) && userValue != ''){
             someName = 'Привет ' + userValue;
         } else {
