@@ -24,14 +24,21 @@ function getNumber(){
     return result;
 };
 
-function addElement(){
+function addElements(){
     let list = document.getElementById("user_number");
     let newLi = document.createElement('li');
-    newLi.innerHTML = userNumber;
     list.appendChild(newLi);
+    return newLi;
+}
+
+function numberOfRows(){
+    for(countLi = 1;  countLi <= userNumber; countLi++){
+      var lastLi = addElements();
+    }
+    lastLi.innerText = userNumber;
 }
 
 const userName = getName();
 const userNumber = getNumber();
+const userLi = numberOfRows();
 document.getElementById("user_text").innerHTML = userName;
-document.getElementsByName(addElement());
