@@ -3,7 +3,7 @@ function changeColor(elem){
     
     let e = window.event;
     if (e.altKey) {
-        document.getElementById("ulElement").removeChild(elem);
+        document.getElementById('ulElement').removeChild(elem);
     }
     else{
         switch (elemClass) {
@@ -23,8 +23,8 @@ function changeColor(elem){
 }
 
 function addLiElement(){
-    let ul = document.getElementById("ulElement");
-    let li = document.createElement("li");
+    let ul = document.getElementById('ulElement');
+    let li = document.createElement('li');
     li.onclick = function () { changeColor(this); };
     ul.appendChild(li);
 }
