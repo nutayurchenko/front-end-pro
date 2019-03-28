@@ -4,15 +4,15 @@ function changeColor(colorLi){
             'red' : 'yellow';
 }
 
-function onInputFocus(event){
+function onLiClick(event){
     changeColor(event.target);
 }
 
-function clickOnLi(el){
+function eventOnClick(el){
         if (el.altKey){
             el.target.remove();
         } else {
-            onInputFocus(el); 
+            onLiClick(el); 
         }
 }
     
@@ -20,7 +20,7 @@ function addNewLi(){
     let ul = document.getElementById('ulElement');
     let li = document.createElement('li');
     li.innerHTML = 'Li element';
-    li.addEventListener('click', clickOnLi);
+    li.addEventListener('click', eventOnClick);
     ul.appendChild(li);
 }
 
