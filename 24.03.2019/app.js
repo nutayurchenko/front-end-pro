@@ -1,30 +1,28 @@
-function changeColor(elem){
-    let elemClass = elem.className;
-    
-    let e = window.event;
-    if (e.altKey) {
-        document.getElementById('ulElement').removeChild(elem);
-    }
-    else{
-        switch (elemClass) {
-          case '':
-            elem.className = 'red';
-            break;
-          case 'red':
-            elem.className = 'yellow';
-            break;
-          case 'yellow':
-            elem.className = 'red';
-            break;
-          default:
-            elem.className = '';
-        }
-    }			
+function changeColor(colorLi){
+    colorLi.style.background = 
+        colorLi.style.background === 'yellow' ?
+            'red' : 'yellow';
 }
 
-function addLiElement(){
+function onInputFocus(event){
+    changeColor(event.target);
+}
+
+function clickOnLi(el){
+        if (el.altKey){
+            el.target.remove();
+        } else {
+            onInputFocus(el); 
+        }
+}
+    
+function addNewLi(){
     let ul = document.getElementById('ulElement');
     let li = document.createElement('li');
-    li.onclick = function () { changeColor(this); };
+    li.innerHTML = 'Li element';
+    li.addEventListener('click', clickOnLi);
     ul.appendChild(li);
 }
+
+const button = document.getElementById('button');
+button.onclick = addNewLi;
